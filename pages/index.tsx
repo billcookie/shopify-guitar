@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import type { InferGetStaticPropsType } from "next"
 import getAllProducts from "@framework/product/get-all-products"
 // import play from "../playground";

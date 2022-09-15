@@ -35,5 +35,6 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
     images: normalizeProductImages(imageConnection),
     ...rest
   }
+
   return product
 }
