@@ -25,7 +25,7 @@ export default function Home({
   // }, [])
 
   return (
-    <div>
+    <div className="root">
       { JSON.stringify(products) }
     </div>
   )
