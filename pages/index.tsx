@@ -1,10 +1,32 @@
-export default function Home() {
+import { useEffect } from "react"
+import type { InferGetStaticPropsType } from "next"
+import getAllProducts from "@framework/product/get-all-products"
+// import play from "../playground";
 
-  const message: string = "Hello World"
+export async function getStaticProps() {
+
+  const products = await getAllProducts()
+
+  return {
+    props: {
+      products
+    },
+    revalidate: 4 * 60 * 60 // every four hours will check new products
+  }
+}
+
+export default function Home({
+  products
+}: InferGetStaticPropsType< typeof getStaticProps>) {
+
+  // useEffect(()  => {
+  //   play();
+  // }, [])
 
   return (
     <div>
-      {message}
+      { JSON.stringify(products) }
+
     </div>
   )
 }
