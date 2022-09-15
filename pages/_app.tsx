@@ -1,13 +1,21 @@
 import { AppProps } from "next/app"
-import Layout from "../components/common/Layout/Layout"
 
-function MyApp({Component, pageProps}: AppProps) {
+interface Props {
+  children: React.ReactNode
+}
+
+function Noop({ children }: Props) {
+  <>{children}</>
+}
+
+
+function MyApp({Component, pageProps}: AppProps & {Component: {Layout: any}}) {
+
+  const Layout = Component.Layout ?? Noop
   return (
-    <>
-      <Layout>
+    <Layout>
         <Component {...pageProps} />
-      </Layout>
-    </>
+    </Layout>
   )
 }
 
