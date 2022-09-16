@@ -32,7 +32,7 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
     description,
     path: `/${handle}`,
     slug: handle.replace(/^\/+|\/+$/g,""), // regex
-    images: normalizeProductImages(imageConnection),
+    image: normalizeProductImages(imageConnection),
     ...rest
   }
 
