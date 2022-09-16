@@ -1,4 +1,5 @@
 import style from "./Marquee.module.css"
+import Ticker from "react-ticker"
 
 interface Props {
   children: React.ReactNode[]
@@ -8,13 +9,17 @@ interface Props {
 function Marquee({children}: Props) {
   return (
     <div className={style.root}>
-      <div className={style.container}>
-        {children}
-      </div>
-
+      <Ticker offset={300}>
+        { () =>
+          <div className={style.container}>
+            {children}
+          </div>
+        }
+      </Ticker>
     </div>
   )
 }
 
+// to change ticker start location change offset
 
 export default Marquee
