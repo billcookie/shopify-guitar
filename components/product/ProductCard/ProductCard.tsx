@@ -16,10 +16,13 @@ function ProductCard({product}: Props) {
           <h3 className={style.productTitle}>
             <span>{product.name}</span>
           </h3>
-          <span className={style.productPrice}>14 $</span>
+          <span className={style.productPrice}>
+            {product.price.value} {product.price.currencyCode}
+          </span>
         </div>
         { product.image && (
           <Image
+          className={style.productImage}
             alt={product.name ?? "Product image"}
             src={product.image[0].url ?? placeholderImage}
             height={540}
