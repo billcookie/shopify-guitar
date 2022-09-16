@@ -1,5 +1,6 @@
 import style from "./Layout.module.css"
-import Footer  from "@components/common/Footer"
+import { Footer, Navbar  } from "@components/common"
+
 
 interface Props {
   children: React.ReactNode
@@ -8,6 +9,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
   <div className={style.root}>
+    <Navbar />
     <main className="fit">
       {children}
     </main>
