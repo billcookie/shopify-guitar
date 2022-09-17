@@ -1,5 +1,6 @@
 import style from "./Usernav.module.css"
 import Link from "next/link"
+import { Bag, Heart } from "@components/icons"
 function Usernav() {
 
   return (
@@ -7,12 +8,12 @@ function Usernav() {
       <ul className={style.list}>
         <li className={style.item}>
           <Link href="/">
-            <a>Cart</a>
+            <a><Bag /></a>
           </Link>
         </li>
         <li className={style.item}>
         <Link href="/">
-            <a>Wishlist</a>
+            <a><Heart /></a>
           </Link>
         </li>
       </ul>
