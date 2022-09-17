@@ -1,7 +1,7 @@
 import { Container } from "@components/ui";
 import Link from "next/link"
 import style from "./Navbar.module.css"
-
+import { Usernav } from "@components/common"
 
 function Navbar() {
 
@@ -28,8 +28,10 @@ function Navbar() {
             <a className={style.link}>Shoes</a>
           </Link>
           </nav>
+          <div className="flex flex-1 justify-end space-x-8">
+            <Usernav />
+          </div>
         </div>
-
       </div>
     </Container>
   )
