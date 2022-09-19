@@ -14,7 +14,7 @@ function Layout({ children }: Props) {
   return (
   <div className={style.root}>
     <Navbar />
-    <Sidebar>
+    <Sidebar isOpen={ui.isSidebarOpen}>
         <CartSidebar />
       </Sidebar>
     <main className="fit">

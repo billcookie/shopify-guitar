@@ -1,9 +1,10 @@
 interface Props {
   children: any
+  isOpen: boolean
 }
 
-function Sidebar({children}: Props) {
-  const isOpen = true
+function Sidebar({children, isOpen}: Props) {
+
   return (
     <>
       { isOpen ? (

@@ -1,14 +1,16 @@
 import style from "./Usernav.module.css"
 import Link from "next/link"
-import { Bag, Heart } from "@components/icons"
-function Usernav() {
+import { Bag as Cart, Heart } from "@components/icons"
+import { useUI } from "@components/ui/context"
 
+function Usernav() {
+  const ui = useUI()
   return (
     <nav>
       <ul className={style.list}>
         <li className={style.item}>
           <Link href="/">
-            <a><Bag /></a>
+          <Cart onClick={ui.setSidebarOpen}/>
           </Link>
         </li>
         <li className={style.item}>
