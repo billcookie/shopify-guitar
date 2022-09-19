@@ -1,6 +1,6 @@
 # 🎸 Guitar Shopify
 
-A headless Shopify app built with Next.js and Typescript
+A headless Shopify app built with Next.js and Typescript. A shop for selling products.
 
 <br>
 App home:
