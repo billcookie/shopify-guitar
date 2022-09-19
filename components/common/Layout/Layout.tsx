@@ -9,19 +9,20 @@ interface Props {
 }
 
 function Layout({ children }: Props) {
-  const ui = useUI()
-  console.log(ui)
+  const { isSidebarOpen, closeSidebar } = useUI()
   return (
-  <div className={style.root}>
-    <Navbar />
-    <Sidebar isOpen={ui.isSidebarOpen}>
+    <div className={style.root}>
+      <Navbar />
+      <Sidebar
+        onClose={closeSidebar}
+        isOpen={isSidebarOpen}>
         <CartSidebar />
       </Sidebar>
-    <main className="fit">
-      {children}
-    </main>
-    <Footer />
-  </div>
+      <main className="fit">
+        { children }
+      </main>
+      <Footer />
+    </div>
   )
 }
 
