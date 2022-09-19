@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 interface Props {
   children: any
   isOpen: boolean
@@ -6,11 +8,19 @@ interface Props {
 
 function Sidebar({children, isOpen, onClose}: Props) {
 
+  const ref = useRef() as React.MutableRefObject<HTMLDivElement>
+
+  useEffect(() => {
+    if (ref.current) {
+      console.log(ref.current)
+    }
+  }, [isOpen])
+
   return (
     <>
       { isOpen ? (
         <div className="fixed inset-0 overflow-hidden h-full z-50">
-          <div className="absolute inset-0 overflow-hidden">
+          <div ref={ref} className="absolute inset-0 overflow-hidden">
             <div
               onClick={onClose}
               className="absolute inset-0 bg-black bg-opacity-50 transition-opacity"
