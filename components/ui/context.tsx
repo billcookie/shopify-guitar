@@ -61,7 +61,13 @@ function UIProvider({children}: Props) {
     }
   }, [state.isSidebarOpen])
 
-  //
+
+  // old code below. If top stops working reuse old.
+  // const value = {
+  //   ...state,
+  //   openSidebar,
+  //   closeSidebar
+  // }
 
   return (
     <UIContext.Provider value={value}>
