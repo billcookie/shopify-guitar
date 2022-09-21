@@ -1,17 +1,18 @@
 import style from "./ProductSlider.module.css"
-import React, { Children, isValidElement } from "react"
+import React, { Children, isValidElement, useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
+import cn from "classnames"
 interface Props {
   children: React.ReactNode
 }
 
 function ProductSlider({children}: Props) {
-
-  const [sliderRef, _] = useKeenSlider({
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
     loop: true,
-    slideChanged(slider) {
-      console.log("changing to slide: ", slider.track.details.rel)
+    slideChanged(s) {
+      console.log("changing to slide: ", s.track.details.rel)
     },
   })
 
@@ -20,6 +21,14 @@ function ProductSlider({children}: Props) {
   return (
     <div className={style.root}>
       <div ref={sliderRef as any} className="keen-slider h-full transition-opacity">
+        <button
+          onClick={instanceRef.current?.prev}
+          className={cn(style.leftControl, style.control)}
+        />
+        <button
+          onClick={instanceRef.current?.next}
+          className={cn(style.rightControl, style.control)}
+        />
         { Children.map(children, child => {
           if (isValidElement(child)) {
             return {
