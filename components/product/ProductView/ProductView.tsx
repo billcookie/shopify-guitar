@@ -5,23 +5,35 @@ import { Container, Button } from '@components/ui'
 import Image from "next/image"
 import { Product } from '@common/types/product'
 import { ProductSlider, Swatch } from "@components/product"
+import { Choices, getVariant } from '../helpers'
+import { useUI } from '@components/ui/context'
 
 
 interface Props {
   product: Product
 }
 
-type AvailableChoices = "color" | "size" | string
 
-type Choices = {
-  [P in AvailableChoices]: string
-}
 
 function ProductView({product}:Props) {
 
   const [ choices, setChoices ] = useState<Choices>({})
+  const { openSidebar } = useUI()
+  const variant = getVariant(product, choices)
 
-  console.log(choices)
+  const addToCart = () => {
+    try {
+      const item = {
+        productId: String(product.id),
+        variantId: variant?.id,
+        variantOptions: variant?.options
+      }
+
+      alert(JSON.stringify(item))
+      openSidebar()
+    } catch {}
+  }
+
   return (
     <Container>
       <div className={cn(style.root, 'fit', "mb-5")}>
@@ -83,7 +95,7 @@ function ProductView({product}:Props) {
           <div>
             <Button
             className={style.button}
-            onClick={() => alert("adding to cart")}
+            onClick={addToCart}
             >
               Add to Cart
             </Button>
