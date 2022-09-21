@@ -2,6 +2,7 @@ import { AppProps } from "next/app"
 import "../assets/main.css"
 import { useUI } from "@components/ui/context"
 import UIProvider from "@components/ui/context"
+import "keen-slider/keen-slider.min.css"
 
 interface Props {
   children: React.ReactNode
