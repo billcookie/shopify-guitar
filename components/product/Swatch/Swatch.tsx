@@ -1,5 +1,6 @@
 import style from "./Swatch.module.css"
 import { Check } from "@components/icons"
+import { isDark } from "@lib/color"
 import cn from "classnames"
 interface Props {
   color?: string
@@ -20,7 +21,8 @@ function Swatch({color, label, variant, active,
     {
       [style.active]: active,
       [style.color]: color,
-      [style.size]: variant === "size"
+      [style.size]: variant === "size",
+      [style.dark]: color && isDark(color)
     }
   )
 
