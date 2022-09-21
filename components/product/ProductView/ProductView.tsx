@@ -7,6 +7,8 @@ import { Product } from '@common/types/product'
 import { ProductSlider, Swatch } from "@components/product"
 import { Choices, getVariant } from '../helpers'
 import { useUI } from '@components/ui/context'
+import useAddItem from "@framework/cart/use-add-item"
+import { useApiProvider } from '@common'
 
 
 interface Props {
@@ -18,7 +20,9 @@ interface Props {
 function ProductView({product}:Props) {
 
   const [ choices, setChoices ] = useState<Choices>({})
+  const api = useApiProvider()
   const { openSidebar } = useUI()
+  const addItem = useAddItem()
   const variant = getVariant(product, choices)
 
   const addToCart = () => {
@@ -29,7 +33,8 @@ function ProductView({product}:Props) {
         variantOptions: variant?.options
       }
 
-      alert(JSON.stringify(item))
+      const output = addItem(item)
+      alert(JSON.stringify(output))
       openSidebar()
     } catch {}
   }
