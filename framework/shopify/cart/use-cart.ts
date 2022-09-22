@@ -1,5 +1,9 @@
-import useCart from "@common/cart/use-cart";
-import { createCheckout, getCheckoutQuery } from "@framework/utils"
+import useCart from "@common/cart/use-cart"
+import {
+  checkoutToCart,
+  createCheckout,
+  getCheckoutQuery
+} from "@framework/utils"
 import { useMemo } from "react"
 
 export default useCart
@@ -9,33 +13,29 @@ export const handler = {
     // get checkout query
     query: getCheckoutQuery
   },
-
- async fetcher({
+  async fetcher({
     fetch,
-   options,
-   input: { checkoutId }
+    options,
+    input: { checkoutId }
   }: any) {
-    const data = await fetch({...options})
-     // we need checkout ID
-     console.log(checkoutId)
-     // Get checkout
     let checkout
 
-     // If there is no checkout then create checkout
     if (checkoutId) {
-      const { data } = await fetch ({
+      const { data } = await fetch({
         ...options,
         variables: {
           checkoutId
         }
       })
-
       checkout = data.node
     } else {
       checkout = await createCheckout(fetch)
     }
-  },
 
+    const cart = checkoutToCart(checkout)
+    debugger
+    return cart
+  },
   useHook: ({useData}: any) => {
     const data = useData({
       swrOptions: {
@@ -44,7 +44,6 @@ export const handler = {
     })
 
     return useMemo(() => {
-      // debugger
       return data
     }, [data])
   }
