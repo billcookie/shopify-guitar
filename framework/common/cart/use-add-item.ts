@@ -1,13 +1,13 @@
-import { handler } from "@framework/cart/use-add-item"
+import { useHook } from "@common/utils/use-hook"
 
 const useAddItem = () => {
 
-  return (input: any) => {
-    return {
-      output: JSON.stringify(input) + "_MODIFIED"
-    }
-  }
-  return handler.useHook()
+  const hook = useHook((hooks) => {
+    return hooks.cart.useAddItem
+  })
+  return hook.useHook({
+    fetch: hook.fetcher
+  })
 }
 
 export default useAddItem
