@@ -22,7 +22,6 @@ export const handler: MutationHook = {
       ]
     }
 
-
     const response = await fetch({
        ...options,
        variables
@@ -39,3 +38,43 @@ export const handler: MutationHook = {
     }
   }
 }
+
+// old code below KEEP UNTIL IT WORKS WITH NEW
+
+// export default useAddItem
+
+
+// export const handler: MutationHook = {
+//   fetcherOptions: {
+//     query: `query { hello }`
+//   },
+//   fetcher: async ({fetch, options, input}) => {
+
+//     const variables = {
+//       checkoutId: getCheckoutId(),
+//       lineItems: [
+//         {
+//          variantId: input.variantId,
+//          quantity: 1
+//         }
+//       ]
+//     }
+
+
+
+//     const response = await fetch({
+//        ...options,
+//        variables
+//     })
+
+//     return response
+//   },
+//   useHook: ({fetch}) => {
+//     return async (input: any) => {
+//       const response = await fetch(input)
+//       return {
+//         output: response
+//       }
+//     }
+//   }
+// }
