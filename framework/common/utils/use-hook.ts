@@ -8,16 +8,21 @@ export const useHook = (fn: (apiHooks: ApiHooks) => MutationHook) => {
   return fn(hooks)
 }
 
+
 export const useMutationHook = (
-  hook: MutationHook ) => {
-    return hook.useHook({
-      fetch: (input: any) => {
-        return hook.fetcher({
-          input,
-          fetch: (input:any) => {
-            return JSON.stringify(input) + "_MODIFIED"
+  hook: MutationHook
+) => {
+
+  return hook.useHook({
+    fetch: (input: any) => {
+      return hook.fetcher({
+        input,
+        fetch: async (input: any) => {
+          return {
+            data: JSON.stringify(input) + "_MODIFIED"
           }
-        })
+        }
+      })
     }
-    })
-  }
+  })
+}
