@@ -16,6 +16,8 @@ function ProductSlider({children}: Props) {
     },
   })
 
+  // above console log probably not needed
+
   // documentation is outdated a little bit.
 
   return (
