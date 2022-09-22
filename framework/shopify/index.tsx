@@ -5,6 +5,8 @@ import {
   useApiProvider as useCoreApiProvider
 } from "@common"
 
+import { shopifyHooks } from "./hooks"
+
 import { getConfig } from "./api/config"
 const config = getConfig()
 
@@ -16,7 +18,8 @@ interface ShopifyApiProviderProps {
 export const ApiProvider = ({children}: ShopifyApiProviderProps) => {
 
   return (
-    <CoreApiProvider config={{...config, testKey: "testValue"}}>
+    <CoreApiProvider config={{...config}}
+    hooks={shopifyHooks}>
       {children}
     </CoreApiProvider>
   )
