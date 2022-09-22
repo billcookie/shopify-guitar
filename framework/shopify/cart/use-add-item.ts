@@ -22,6 +22,8 @@ export const handler: MutationHook = {
       ]
     }
 
+
+
     const response = await fetch({
        ...options,
        variables
