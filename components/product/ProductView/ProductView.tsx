@@ -24,7 +24,7 @@ function ProductView({product}:Props) {
   const addItem = useAddItem()
   const variant = getVariant(product, choices)
 
-  const addToCart = () => {
+  const addToCart = async () => {
     try {
       const item = {
         productId: String(product.id),
@@ -32,7 +32,7 @@ function ProductView({product}:Props) {
         variantOptions: variant?.options
       }
 
-      const output = addItem(item)
+      const output = await addItem(item)
       alert(JSON.stringify(output))
       openSidebar()
     } catch {}
