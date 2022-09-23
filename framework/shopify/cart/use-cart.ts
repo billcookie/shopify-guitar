@@ -33,7 +33,7 @@ export const handler = {
     }
 
     const cart = checkoutToCart(checkout)
-    debugger
+    // debugger
     return cart
   },
   useHook: ({useData}: any) => {
