@@ -8,6 +8,7 @@
   @apply absolute top-1/2 -translate-x-1/2 z-20 w-16 h-16 flex items-center justify-center bg-hover-1 rounded-full;
 }
 
+
 .leftControl:hover,
 .rightControl:hover {
   @apply bg-hover-2;
@@ -19,7 +20,7 @@
 }
 
 .leftControl {
-  @apply bg-cover left-10;
+  @apply bg-cover left-16;
   background-image: url('/cursor-left.png');
 
   @screen md {
@@ -28,7 +29,7 @@
 }
 
 .rightControl {
-  @apply bg-cover right-10;
+  @apply bg-cover right-0;
   background-image: url('/cursor-right.png');
 
   @screen md {
