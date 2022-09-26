@@ -6,6 +6,8 @@ import { Trash, Plus, Minus } from '@components/icons'
 import { LineItem } from '@common/types/cart'
 import { Swatch } from '@components/product'
 import useRemoveItem from '@framework/cart/use-remove-item'
+import { useUpdateItem } from '@common/cart'
+
 
 
 
@@ -17,6 +19,8 @@ const CartItem = ({
   currencyCode: string
 }) => {
   const removeItem = useRemoveItem()
+  const updateItem = useUpdateItem()
+
   const price = (item.variant.price! * item.quantity) || 0
   const { options } = item
   return (
@@ -63,7 +67,13 @@ const CartItem = ({
         </div>
         <div className="flex items-center mt-3">
           <button type="button">
-            <Minus onClick={() => {}}/>
+          <Minus onClick={() => {
+              updateItem({
+                id: item.id,
+                quantity: --item.quantity,
+                variantId: item.variantId
+              })
+            }}/>
           </button>
           <label>
             <input
@@ -72,20 +82,31 @@ const CartItem = ({
               min={0}
               className={s.quantity}
               value={item.quantity}
-              onChange={() => {}}
-              onBlur={() => {}}
+              onChange={() => {
+                updateItem({
+                  id: item.id,
+                  quantity: ++item.quantity,
+                  variantId: item.variantId
+                })
+              }}
             />
           </label>
           <button type="button">
-            <Plus onClick={() => {}}/>
+          <Plus onClick={() => {
+              updateItem({
+                id: item.id,
+                quantity: ++item.quantity,
+                variantId: item.variantId
+              })
+            }}/>
           </button>
         </div>
       </div>
       <div className="flex flex-col justify-between space-y-2 text-base">
         <span>{price} {currencyCode}</span>
         <button
-          onClick={ async () => {
-            const item = await removeItem("testing input")
+          onClick={() => {
+            removeItem({id: item.id})
           }}
           className="flex justify-end outline-none"
         >

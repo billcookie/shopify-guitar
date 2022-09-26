@@ -46,12 +46,17 @@ export const handler: MutationHook<AddItemHookDescriptor> = {
     const cart = checkoutToCart(data.checkoutLineItemsAdd.checkout)
     return cart
   },
-  useHook: ({fetch}) => () => {
-    const { mutate: updateCart } = useCart()
-    return async (input) => {
-      const response = await fetch(input)
-      await updateCart(response, false)
-      return response
+
+  //check thi shook
+
+  useHook: ({fetch}) => {
+    const {mutate: updateCart} = useCart()
+    return () => {
+      return async(input:any) => {
+        const response = await fetch(input)
+        updateCart(response, false)
+        return response
+      }
     }
   }
 }
