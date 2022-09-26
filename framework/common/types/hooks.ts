@@ -54,6 +54,7 @@ export type UseDataContext = {
 export type UseData<Data> = (context: UseDataContext) => Data
 
 
+
 export type SWRHook<H extends HookDescriptor = any> = {
   fetcherOptions: HookFetcherOptions
   fetcher: HookFetcherFn<
