@@ -3,6 +3,7 @@ import { Check } from "@components/icons"
 import { isDark } from "@lib/color"
 import cn from "classnames"
 interface Props {
+  size?: "sm" | "md" | "lg"
   color?: string
   label?: string
   active?: boolean
@@ -10,7 +11,7 @@ interface Props {
   onClick: () => void
 }
 
-function Swatch({color, label, variant, active,
+function Swatch({color, label, variant, active, size="md",
    ...rest}:Props) {
 
   label = label?.toLowerCase()
@@ -22,7 +23,8 @@ function Swatch({color, label, variant, active,
       [style.active]: active,
       [style.color]: color,
       [style.size]: variant === "size",
-      [style.dark]: color && isDark(color)
+      [style.dark]: color && isDark(color),
+      [style.sm]: size === "sm"
     }
   )
 

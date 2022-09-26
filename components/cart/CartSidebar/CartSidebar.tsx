@@ -7,9 +7,11 @@ import CartItem from '../CartItem'
 
 function CartSidebar() {
   const { closeSidebar} = useUI()
-  const { data } = useCart()
+  // const { data } = useCart()
+  // const isEmpty = (data?.lineItems.length ?? 0) <= 0
 
-  const isEmpty = (data?.lineItems.length ?? 0) <= 0
+  const { data, isEmpty } = useCart()
+
   const rootClass = cn(
     "h-full flex flex-col",
     {"bg-secondary text-secondary": isEmpty}
