@@ -1,10 +1,10 @@
 .root {
-  @apply bg-black;
-  height: 320px;
+  @apply bg-white;
+  height: 380px;
 }
 
 .secondary {
-  @apply bg-white;
+  @apply bg-black;
 }
 
 .container {

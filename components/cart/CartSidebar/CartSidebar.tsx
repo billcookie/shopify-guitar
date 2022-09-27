@@ -42,7 +42,7 @@ function CartSidebar() {
             Your cart is empty
           </h2>
           <p className="text-accents-3 px-10 text-center pt-2">
-            Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
+            Please feel free to add something to your cart.
           </p>
         </div>
       ) :

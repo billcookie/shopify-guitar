@@ -17,7 +17,7 @@ function Marquee({children, variant = "primary"}: Props) {
   )
 
   return (
-    <div className={style.root}>
+    <div className={rootClassName}>
       <Ticker offset={300}>
         { () =>
           <div className={style.container}>
