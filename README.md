@@ -1,9 +1,10 @@
 # 🎸 Guitar Shopify
 
-A headless Shopify app built with Next.js, Typescript and Tailwind. A shop for selling products. That allows users to buy various products and variants of those products.
+A headless Shopify app built with Next.js, Typescript and Tailwind. It allows users to buy various guitars and variants of those guitars. Please note this shop is dev use only. Items cannot be physically purchased. 
 
 <br>
-App home:
+
+App home: https://shopify-guitar.vercel.app/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -39,3 +40,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Images and product description references: https://www.fender.com/ja-JP/start
+
+
