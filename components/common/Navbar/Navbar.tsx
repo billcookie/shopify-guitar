@@ -19,13 +19,13 @@ function Navbar() {
             <a className={style.link}>All</a>
           </Link>
           <Link href="/">
-            <a className={style.link}>Clothes</a>
+            <a className={style.link}>Guitars</a>
           </Link>
           <Link href="/">
             <a className={style.link}>Accessories</a>
           </Link>
           <Link href="/">
-            <a className={style.link}>Shoes</a>
+            <a className={style.link}>Amps</a>
           </Link>
           </nav>
           <div className="flex flex-1 justify-end space-x-8">
