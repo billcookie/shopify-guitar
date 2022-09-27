@@ -23,7 +23,7 @@ export type UpdateItemDescriptor = {
 
 export const handler: MutationHook<UpdateItemDescriptor> = {
   fetcherOptions: {
-    query: "query { hello }"
+    query: checkoutLineItemsUpdateMutation
   },
   async fetcher({
     input: item,
