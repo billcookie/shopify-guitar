@@ -47,19 +47,37 @@ export const handler: MutationHook<AddItemHookDescriptor> = {
     return cart
   },
 
-  //check thi shook
+  useHook: ({fetch}) => () => {
+    const { mutate: updateCart } = useCart()
 
-  useHook: ({fetch}) => {
-    const {mutate: updateCart} = useCart()
-    return () => {
-      return async(input:any) => {
-        const response = await fetch(input)
-        updateCart(response, false)
-        return response
-      }
+    return async (input) => {
+      const response = await fetch(input)
+      await updateCart(response, false)
+      return response
     }
   }
+
+  //check thi shook
+
+  // useHook: ({fetch}) => {
+  //   const {mutate: updateCart} = useCart()
+  //   return () => {
+  //     return async(input:any) => {
+  //       const response = await fetch(input)
+  //       updateCart(response, false)
+  //       return response
+  //     }
+  //   }
+  // }
 }
+
+// return new Promise((res) => {
+//   setTimeout(async () => {
+//     const response = await fetch(input)
+//     await updateCart(response, false)
+//     res(response)
+//   }, 1000)
+// })
 
 // old code below KEEP UNTIL IT WORKS WITH NEW
 

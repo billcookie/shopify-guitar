@@ -84,9 +84,8 @@ function CartSidebar() {
             </div>
           </div>
           <Button
-            onClick={() => {
-              alert("Going to checkout!")
-            }}
+            Component="a"
+            href="/"
           >
             Proceed to Checkout
           </Button>
