@@ -35,7 +35,7 @@ export default function Home({
       </Grid>
       <Hero
       headline="Think, Create, Play"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      description="Here at Bill's Guitars we provide the highest and best sounding Fender guitars from around the world. Most of our guitars are made in either the Fender America factory or here in Japan. We not only sell just guitars, but all one needs to start the journey to begin learning how to play."
       />
       <Marquee>
       { products.slice(3,6).map(product =>
