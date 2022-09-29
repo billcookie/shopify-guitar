@@ -2,6 +2,7 @@ import { Container } from "@components/ui";
 import Link from "next/link"
 import style from "./Navbar.module.css"
 import { Usernav } from "@components/common"
+import Image from "next/image";
 
 function Navbar() {
 
@@ -10,8 +11,13 @@ function Navbar() {
       <div className={style.root}>
         <div className="flex flex-1 items-center">
           <Link href="/">
-            <a className={style.logo}>
-              Bill{`'`}s Guitars
+            <a>
+            <Image  className={style.logo}
+                  src={"/../public/logo.png"}
+                  alt={"logo.png"}
+                  width={100}
+                  height={100}
+                />
             </a>
           </Link>
           <nav className="ml-6 space-x-6">
