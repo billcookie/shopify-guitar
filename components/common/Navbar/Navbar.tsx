@@ -11,13 +11,14 @@ function Navbar() {
       <div className={style.root}>
         <div className="flex flex-1 items-center">
           <Link href="/">
-            <a>
-            <Image  className={style.logo}
-                  src="/../public/logo.png"
-                  alt={"logo.png"}
-                  width={100}
-                  height={100}
-                />
+            <a className={style.logo}>
+            <Image
+              className={style.productImage}
+                alt={"Product image"}
+                src={"/logo.png"}
+                height={100}
+                width={100}
+              />
             </a>
           </Link>
           <nav className="ml-6 space-x-6">
