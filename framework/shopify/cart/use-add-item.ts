@@ -57,6 +57,8 @@ export const handler: MutationHook<AddItemHookDescriptor> = {
     }
   }
 
+  // double check useCart()
+
   //check thi shook
 
   // useHook: ({fetch}) => {
@@ -70,51 +72,3 @@ export const handler: MutationHook<AddItemHookDescriptor> = {
   //   }
   // }
 }
-
-// return new Promise((res) => {
-//   setTimeout(async () => {
-//     const response = await fetch(input)
-//     await updateCart(response, false)
-//     res(response)
-//   }, 1000)
-// })
-
-// old code below KEEP UNTIL IT WORKS WITH NEW
-
-// export default useAddItem
-
-
-// export const handler: MutationHook = {
-//   fetcherOptions: {
-//     query: `query { hello }`
-//   },
-//   fetcher: async ({fetch, options, input}) => {
-
-//     const variables = {
-//       checkoutId: getCheckoutId(),
-//       lineItems: [
-//         {
-//          variantId: input.variantId,
-//          quantity: 1
-//         }
-//       ]
-//     }
-
-
-
-//     const response = await fetch({
-//        ...options,
-//        variables
-//     })
-
-//     return response
-//   },
-//   useHook: ({fetch}) => {
-//     return async (input: any) => {
-//       const response = await fetch(input)
-//       return {
-//         output: response
-//       }
-//     }
-//   }
-// }

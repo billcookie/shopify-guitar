@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import s from './CartItem.module.css'
+import style from './CartItem.module.css'
 import { Trash, Plus, Minus } from '@components/icons'
 import { LineItem } from '@common/types/cart'
 import { Swatch } from '@components/product'
@@ -54,12 +54,12 @@ const CartItem = ({
       <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer">
         <Image
           onClick={() => {}}
-          className={s.productImage}
+          className={style.productImage}
           width={150}
           height={150}
           src={item.variant.image!.url}
           unoptimized
-        />
+        alt="product-image"/>
       </div>
       <div className="flex-1 flex flex-col text-base">
         <Link href={`/`}>
@@ -97,7 +97,7 @@ const CartItem = ({
               type="number"
               max={99}
               min={0}
-              className={s.quantity}
+              className={style.quantity}
               value={quantity}
               onChange={handleQuantity}
             />

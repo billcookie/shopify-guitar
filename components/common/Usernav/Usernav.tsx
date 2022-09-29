@@ -1,5 +1,5 @@
 import { FC } from "react"
-import s from "./Usernav.module.css"
+import style from "./Usernav.module.css"
 import Link from "next/link"
 import { Bag as Cart, Heart } from "@components/icons"
 import { useUI } from "@components/ui/context"
@@ -16,16 +16,16 @@ const Usernav: FC = () => {
 
   return (
     <nav>
-      <ul className={s.list}>
-        <li className={s.item}>
+      <ul className={style.list}>
+        <li className={style.item}>
           <Cart onClick={openSidebar}/>
           { itemsCount > 0 &&
-            <span className={s.bagCount}>
+            <span className={style.bagCount}>
               { itemsCount }
             </span>
           }
         </li>
-        <li className={s.item}>
+        <li className={style.item}>
           <Link href="/wishlist">
             <a>
               <Heart />

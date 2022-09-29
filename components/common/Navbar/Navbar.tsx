@@ -11,7 +11,7 @@ function Navbar() {
         <div className="flex flex-1 items-center">
           <Link href="/">
             <a className={style.logo}>
-              Bills Guitars
+              Bill{`'`}s Guitars
             </a>
           </Link>
           <nav className="ml-6 space-x-6">

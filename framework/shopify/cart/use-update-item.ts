@@ -58,4 +58,4 @@ export const handler: MutationHook<UpdateItemDescriptor> = {
   }
 }
 
-// currently error on useHook usecart and .checkout
+// double check useCart()
