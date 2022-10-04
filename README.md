@@ -1,4 +1,4 @@
-# 🎸 Guitar Shopify
+# 🎸 Bill`s Guitars
 
 A headless Shopify app built with Next.js, Typescript, Tailwind and GraphQl. It allows users to buy various guitars and variants of those guitars. Please note this shop is dev use only. Items cannot be physically purchased.
 
